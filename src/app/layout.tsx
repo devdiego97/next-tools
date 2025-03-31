@@ -4,6 +4,7 @@ import 'rsuite/dist/rsuite-no-reset.min.css';
 import { CustomProvider } from 'rsuite';
 import "./globals.css";
 import { LayoutApp } from "@/components/layout";
+import { AppProvider } from "@/context/ui";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,11 +28,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <CustomProvider >
-        <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <LayoutApp>{children}</LayoutApp>
-      </body>
-      </CustomProvider>
+      <AppProvider>
+        <CustomProvider >
+          <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+          <LayoutApp>{children}</LayoutApp>
+        </body>
+        </CustomProvider>
+      </AppProvider>
     </html>
   );
 }

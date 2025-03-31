@@ -1,2 +1,9 @@
 @import "tailwindcss";
 @import 'rsuite/dist/rsuite-no-reset.min.css';
+
+*{
+    box-sizing: border-box;
+}
+
+  
+ 

@@ -2,6 +2,7 @@ import { TNotes } from "@/data/notes"
 import Link from "next/link"
 import { Button, Card,Text } from "rsuite"
 import { GoBook } from "react-icons/go"; 
+import { useStore } from "@/stores/useStore";
 
 
 type Props={
@@ -10,10 +11,12 @@ type Props={
 }
 78
 export const CardNote=({note,click}:Props)=>{
+  
+    
 
-    const  OnClick=()=>{
-      click()
-    }
+  const OnClick=()=>{
+    click()
+  }
 
     return <div className="bg-gray-200 h-auto rounded transition-all hover:shadow" >
       <div className="bg-gray-300 rounded p-3 m-2 flex align-middle">
